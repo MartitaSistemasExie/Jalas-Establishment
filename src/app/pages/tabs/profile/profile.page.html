@@ -1,9 +1,100 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-grid>
+    <!--    Site Card -->
+    <ion-row>
+      <ion-col>
+        <ion-card class="myCard">
+          <img [src]="site.bgImage" class="bannerImage"/>
+          <div class="myOverlay">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <ion-avatar class="avatar-radius">
+                    <img [src]="site.avatarImage"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col>
+                  <ion-card-title>
+                    <b>{{site.name}}</b>
+                  </ion-card-title>
+                  <br/>
+                  <ion-card-subtitle>
+                    {{site.location}}
+                  </ion-card-subtitle>
+                </ion-col>
+              </ion-row>
+              <br/>
+            </ion-grid>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+<!--    Personal Info -->
+    <ion-row>
+      <ion-col>
+        <ion-row>
+          <ion-col>
+            <ion-label>Información Privada</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-row>
+                <ion-col>Correo</ion-col>
+                <ion-col>{{site.email}}</ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-row>
+                <ion-col>Teléfono</ion-col>
+                <ion-col>{{site.phone}}</ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-row>
+                <ion-col>Horarios</ion-col>
+                <ion-col size="10">
+                  <ion-row><ion-col>Lunes</ion-col><ion-col>{{site.hours.lunes}}</ion-col></ion-row>
+                  <ion-row><ion-col>Martes</ion-col><ion-col>{{site.hours.martes}}</ion-col></ion-row>
+                  <ion-row><ion-col>Miércoles</ion-col><ion-col>{{site.hours.miercoles}}</ion-col></ion-row>
+                  <ion-row><ion-col>Jueves</ion-col><ion-col>{{site.hours.jueves}}</ion-col></ion-row>
+                  <ion-row><ion-col>Viernes</ion-col><ion-col>{{site.hours.viernes}}</ion-col></ion-row>
+                  <ion-row><ion-col>Sábado</ion-col><ion-col>{{site.hours.sabado}}</ion-col></ion-row>
+                  <ion-row><ion-col>Domingo</ion-col><ion-col>{{site.hours.domingo}}</ion-col></ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+<!--    Gallery-->
+    <ion-row>
+      <ion-col>
+        <ion-label>Galería</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-slides *ngIf="!emptyGallery" [options]="slideOpts">
+          <ion-slide *ngFor="let image of site.gallery">
+            <div>
+              <img [src]="image" class="galleryImage">
+            </div>
+          </ion-slide>
+        </ion-slides>
+        <ion-label *ngIf="emptyGallery"> Sin imagenes de galería </ion-label>
+      </ion-col>
+    </ion-row>
 
+  </ion-grid>
 </ion-content>

@@ -5,8 +5,36 @@ import { MainTabsPage } from './main-tabs.page';
 
 const routes: Routes = [
   {
+    path: 'main-tabs',
+    component: MainTabsPage,
+    children: [
+      {
+        path: 'feed',
+        loadChildren: () => import('../feed/feed-routing.module').then(m => m.FeedPageRoutingModule)
+      },
+      {
+        path: 'create',
+        loadChildren: () => import('../create/create.module').then(m => m.CreatePageModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+      },
+      {
+        path: 'settings',
+        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
+      },
+      {
+        path: '',
+        redirectTo: 'main-tabs/create',
+        pathMatch: 'full'
+      }
+    ]
+  },
+  {
     path: '',
-    component: MainTabsPage
+    redirectTo: 'main-tabs/create',
+    pathMatch: 'full'
   }
 ];
 

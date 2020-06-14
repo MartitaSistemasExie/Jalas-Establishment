@@ -1,5 +1,7 @@
 {
   "name": "JalasEstablishment",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

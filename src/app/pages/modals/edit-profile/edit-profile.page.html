@@ -1,0 +1,108 @@
+<ion-header no-border="true" translucent>
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
+      Cerrar
+    </ion-button>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <!--    Imagen de Portada-->
+    <ion-row>
+      <ion-col>
+        <ion-card align="center">
+          <ion-card-header>
+            <ion-text color="dark" style="font-size: large;">
+              Imagen de Portada
+            </ion-text>
+          </ion-card-header>
+          <ion-card-title>
+            <ion-img *ngIf="bannerImg" [src]="bannerImg" class="bannerImage"></ion-img>
+          </ion-card-title>
+          <ion-card-content>
+            <ion-button color="dark"
+                        expand="block"
+
+                        (click)="addBannerImage()">
+              Cambiar Imagen
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--    Imagen de Perfil-->
+    <ion-row>
+      <ion-col>
+        <ion-card align="center">
+          <ion-card-header>
+            <ion-text color="dark" style="font-size: large;">
+              Imagen de Perfil
+            </ion-text>
+          </ion-card-header>
+          <ion-card-title>
+            <ion-grid>
+              <ion-row>
+                <ion-col></ion-col>
+                <ion-col style="padding-left: 10%">
+                  <ion-avatar class="avatar-radius">
+                    <img [src]="avatarImg" style="max-height: 100px;"/>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col></ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-title>
+          <ion-card-content>
+            <ion-button color="dark" expand="block" fill="outline" (click)="addAvatarImage()">Cambiar
+              Imagen
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!--    Imagenes de Galeria-->
+    <ion-row>
+      <ion-col>
+        <!--        titulo-->
+        <ion-row>
+          <ion-col>
+            <ion-label>Galería</ion-label>
+          </ion-col>
+        </ion-row>
+        <!--        Imagenes y boton-->
+        <ion-row>
+
+          <!--          boton-->
+          <ion-col size="2">
+            <ion-button color="dark" fill="clear" size="large" (click)="addGalleryImage()">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <!--          imagenes-->
+          <ion-col>
+            <ion-slides *ngIf="!emptyGallery">
+              <ion-slide *ngFor="let image of gallery">
+                <div>
+                  <ion-button fill="clear" color="dark" (click)="removeGalleryImage(image)">
+                    <ion-icon name="close-circle-outline"></ion-icon>
+                  </ion-button>
+                  <br/>
+                  <img [src]="image" class="galleryImage">
+                </div>
+              </ion-slide>
+            </ion-slides>
+            <ion-label *ngIf="emptyGallery"> Sin imagenes de galería</ion-label>
+          </ion-col>
+        </ion-row>
+        <!--        fin -->
+
+      </ion-col>
+    </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>

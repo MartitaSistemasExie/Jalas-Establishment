@@ -36,21 +36,33 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs/main-tabs/main-tabs.module').then( m => m.MainTabsPageModule)
   },
   {
-    path: 'settings',
-    loadChildren: () => import('./pages/tabs/settings/settings.module').then( m => m.SettingsPageModule)
+    path: 'edit-info',
+    loadChildren: () => import('./pages/modals/edit-info/edit-info.module').then( m => m.EditInfoPageModule)
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./pages/tabs/profile/profile.module').then( m => m.ProfilePageModule)
+    path: 'edit-password',
+    loadChildren: () => import('./pages/modals/edit-password/edit-password.module').then( m => m.EditPasswordPageModule)
   },
   {
-    path: 'feed',
-    loadChildren: () => import('./pages/tabs/feed/feed.module').then( m => m.FeedPageModule)
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/modals/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
-  {
-    path: 'create',
-    loadChildren: () => import('./pages/tabs/create/create.module').then( m => m.CreatePageModule)
-  },
+  // {
+  //   path: 'settings',
+  //   loadChildren: () => import('./pages/tabs/settings/settings.module').then( m => m.SettingsPageModule)
+  // },
+  // {
+  //   path: 'profile',
+  //   loadChildren: () => import('./pages/tabs/profile/profile.module').then( m => m.ProfilePageModule)
+  // },
+  // {
+  //   path: 'feed',
+  //   loadChildren: () => import('./pages/tabs/feed/feed.module').then( m => m.FeedPageModule)
+  // },
+  // {
+  //   path: 'create',
+  //   loadChildren: () => import('./pages/tabs/create/create.module').then( m => m.CreatePageModule)
+  // },
 ];
 
 @NgModule({

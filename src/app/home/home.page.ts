@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Storage} from "@ionic/storage";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,27 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
+  constructor(private storage: Storage, private router: Router) {}
 
-  constructor() {}
+  /***
+   * Continuar App
+   */
+  async continuarApp() {
+    await this.storage.set('slides', true).then(() => {
+        this.goToLoginPage();
+      }
+    );
+  }
+
+  /***
+   * Go To Login Page
+   */
+  goToLoginPage() {
+    this.router.navigate(['/login']);
+  }
 
 }

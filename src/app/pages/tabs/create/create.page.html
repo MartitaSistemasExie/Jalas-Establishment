@@ -1,9 +1,127 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>create</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-grid>
+    <!--  imagen-->
+    <ion-row>
+      <ion-col>
+        <ion-card align="center">
+          <ion-card-header>
+            <ion-text color="dark" style="font-size: large;">
+              Imagen Promocional
+            </ion-text>
+          </ion-card-header>
+          <ion-card-title>
+            <ion-img [src]="bannerImage" class="bannerImage"></ion-img>
+          </ion-card-title>
+          <ion-card-content>
+            <ion-button color="dark"
+                        expand="block"
+                        (click)="addBannerImage()">
+              Agregar Imagen
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
 
+    <!--  Nombre-->
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="10">
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input placeholder="Nombre de Evento" [(ngModel)]="name"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Dirección-->
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="10">
+      <ion-item>
+        <ion-label position="stacked">Dirección</ion-label>
+        <ion-button slot="end" size="small" fill="outline" color="dark" (click)="obtenerDireccion()">
+          <ion-icon name="location" size="small" color="dark"></ion-icon>
+        </ion-button>
+        <ion-textarea [(ngModel)]="address" [disabled]="addresDis"></ion-textarea>
+      </ion-item>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <!--  Descripción-->
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label position="floating"> Descripción</ion-label>
+        <ion-textarea placeholder="Descripción de Evento (costos, preventas, etc.)"
+                      [(ngModel)]="description"></ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+
+  <!--  Fecha y hora inicio-->
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="10">
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> Fecha Inicio</ion-label>
+            <ion-datetime displayFormat="DD-MM-YYYY" min="2020" max="2120" [(ngModel)]="fechaInicio" placeholder="Fecha Inicio"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> Hora Inicio</ion-label>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="horaInicio" placeholder="Hora Inicio"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <!--  Fecha y hora fin-->
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="10">
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> Fecha Fin</ion-label>
+            <ion-datetime displayFormat="DD-MM-YYYY" min="2020" max="2120" [(ngModel)]="fechaFin" placeholder="Fecha Fin"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label> Hora Fin</ion-label>
+            <ion-datetime displayFormat="HH:mm" [(ngModel)]="horaFin" placeholder="Hora Fin"></ion-datetime>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+
+  <!--  Botón-->
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col size="6">
+      <ion-button color="dark" expand="block" fill="outline" (click)="createEvent()"> Crear </ion-button>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
 </ion-content>
