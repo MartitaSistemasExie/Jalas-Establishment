@@ -14,23 +14,23 @@ export class CreateAccountPage implements OnInit {
   /***
    * Prod Variables
    */
-  // establishment = {
-  //   name: '',
-  //   group: ' ',
-  //   email: '',
-  //   pswd: '',
-  // };
-  // secondPswd = '';
+  establishment = {
+    name: '',
+    group: ' ',
+    email: '',
+    pswd: '',
+  };
+  secondPswd = '';
   /***
    * Dev Variables
    */
-  establishment = {
-    name: 'Bar TEST',
-    group: ' ',
-    email: 'test1@jalas.com',
-    pswd: 'test1',
-  };
-  secondPswd = 'test1';
+  // establishment = {
+  //   name: 'Bar TEST',
+  //   group: ' ',
+  //   email: 'test1@jalas.com',
+  //   pswd: 'test1',
+  // };
+  // secondPswd = 'test1';
   serviceResponse;
   constructor(private alertController: AlertController,
               private http: HTTP,

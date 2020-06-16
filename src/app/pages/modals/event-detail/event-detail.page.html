@@ -1,3 +1,12 @@
+<ion-header no-border="true" translucent>
+  <ion-toolbar>
+    <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
+      Cancelar
+    </ion-button>
+    <ion-title>Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
   <ion-grid>
     <!--  imagen-->
@@ -12,13 +21,6 @@
           <ion-card-title>
             <ion-img [src]="bannerImage" class="bannerImage"></ion-img>
           </ion-card-title>
-          <ion-card-content>
-            <ion-button color="dark"
-                        expand="block"
-                        (click)="addBannerImage()">
-              Agregar Imagen
-            </ion-button>
-          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
@@ -29,7 +31,7 @@
       <ion-col size="10">
         <ion-item>
           <ion-label position="stacked">Nombre</ion-label>
-          <ion-input placeholder="Nombre de Evento" [(ngModel)]="name"></ion-input>
+          <ion-input readonly="true" placeholder="Nombre de Evento" [(ngModel)]="name"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col></ion-col>
@@ -40,10 +42,7 @@
       <ion-col size="10">
         <ion-item>
           <ion-label position="stacked">Dirección</ion-label>
-          <ion-button slot="end" size="small" fill="outline" color="dark" (click)="obtenerDireccion()">
-            <ion-icon name="location" size="small" color="dark"></ion-icon>
-          </ion-button>
-          <ion-textarea [(ngModel)]="address" [disabled]="addresDis"></ion-textarea>
+          <ion-textarea [(ngModel)]="address" readonly="true"></ion-textarea>
         </ion-item>
       </ion-col>
       <ion-col></ion-col>
@@ -55,7 +54,7 @@
       <ion-col size="10">
         <ion-item>
           <ion-label position="floating"> Descripción</ion-label>
-          <ion-textarea placeholder="Descripción de Evento (costos, preventas, etc.)"
+          <ion-textarea readonly="true"
                         [(ngModel)]="description"></ion-textarea>
         </ion-item>
       </ion-col>
@@ -70,8 +69,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label> Fecha Inicio</ion-label>
-              <ion-datetime displayFormat="DD-MM-YYYY" min="2020" max="2120" [(ngModel)]="fechaInicio" placeholder="Fecha Inicio"></ion-datetime>
+              <ion-label> Fecha Inicio: {{fechaInicio}}</ion-label>
+<!--              <ion-datetime displayFormat="DD-MM-YYYY" min="2020" max="2120" [(ngModel)]="fechaInicio" placeholder="Fecha Inicio"></ion-datetime>-->
             </ion-item>
           </ion-col>
         </ion-row>
@@ -79,8 +78,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label> Hora Inicio</ion-label>
-              <ion-datetime displayFormat="HH:mm" [(ngModel)]="horaInicio" placeholder="Hora Inicio"></ion-datetime>
+              <ion-label> Hora Inicio: {{horaInicio}}</ion-label>
+<!--              <ion-datetime displayFormat="HH:mm" [(ngModel)]="horaInicio" placeholder="Hora Inicio"></ion-datetime>-->
             </ion-item>
           </ion-col>
         </ion-row>
@@ -97,8 +96,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label> Fecha Fin</ion-label>
-              <ion-datetime displayFormat="DD-MM-YYYY" min="2020" max="2120" [(ngModel)]="fechaFin" placeholder="Fecha Fin"></ion-datetime>
+              <ion-label> Fecha Fin: {{fechaFin}}</ion-label>
+<!--              <ion-datetime displayFormat="DD-MM-YYYY" min="2020" max="2120" [(ngModel)]="fechaFin" placeholder="Fecha Fin"></ion-datetime>-->
             </ion-item>
           </ion-col>
         </ion-row>
@@ -106,8 +105,8 @@
         <ion-row>
           <ion-col>
             <ion-item>
-              <ion-label> Hora Fin</ion-label>
-              <ion-datetime displayFormat="HH:mm" [(ngModel)]="horaFin" placeholder="Hora Fin"></ion-datetime>
+              <ion-label> Hora Fin: {{horaFin}}</ion-label>
+<!--              <ion-datetime displayFormat="HH:mm" [(ngModel)]="horaFin" placeholder="Hora Fin"></ion-datetime>-->
             </ion-item>
           </ion-col>
         </ion-row>
@@ -117,14 +116,12 @@
     </ion-row>
 
     <!--  Botón-->
-    <ion-row>
-      <ion-col></ion-col>
-      <ion-col size="6">
-        <ion-button color="dark" expand="block" fill="outline" (click)="createEvent()"> Crear </ion-button>
-      </ion-col>
-      <ion-col></ion-col>
-    </ion-row>
+<!--    <ion-row>-->
+<!--      <ion-col></ion-col>-->
+<!--      <ion-col size="6">-->
+<!--        <ion-button color="dark" expand="block" fill="outline" (click)="updateEvent()"> Actualizar </ion-button>-->
+<!--      </ion-col>-->
+<!--      <ion-col></ion-col>-->
+<!--    </ion-row>-->
   </ion-grid>
-
-
 </ion-content>

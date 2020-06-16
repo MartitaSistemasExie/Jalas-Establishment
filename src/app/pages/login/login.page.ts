@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
    * DEV VARIABLES
    */
   usuario = {
-    email: 'test1@jalas.com',
-    pswd: 'test1'
+    email: '',
+    pswd: ''
   };
 
   /***

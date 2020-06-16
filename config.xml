@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jalas.establishment" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Jalas Establecimientos</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="com.jalas.sites" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Jalas Sites</name>
+    <description>Jalas para establecimientos.</description>
+    <author email="juanramirezblancas@gmail.com" href="http://ionicframework.com/">Jay Ramirez</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

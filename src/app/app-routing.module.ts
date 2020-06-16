@@ -47,6 +47,18 @@ const routes: Routes = [
     path: 'edit-profile',
     loadChildren: () => import('./pages/modals/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   },
+  {
+    path: 'edit-event',
+    loadChildren: () => import('./pages/modals/edit-event/edit-event.module').then( m => m.EditEventPageModule)
+  },
+  {
+    path: 'event-detail',
+    loadChildren: () => import('./pages/modals/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
+  },
+  // {
+  //   path: 'event-feed',
+  //   loadChildren: () => import('./pages/tabs/event-feed/event-feed.module').then( m => m.EventFeedPageModule)
+  // },
   // {
   //   path: 'settings',
   //   loadChildren: () => import('./pages/tabs/settings/settings.module').then( m => m.SettingsPageModule)

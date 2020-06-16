@@ -17,8 +17,8 @@ export class CreateInfoPage implements OnInit {
   /***
    * Dev Variables;
    */
-  phone = '811234321';
-  description = 'A simple BAR description';
+  phone = '';
+  description = '';
   accountData: any;
   selectedCat;
   addressString = '';

@@ -9,12 +9,12 @@ const routes: Routes = [
     component: MainTabsPage,
     children: [
       {
-        path: 'feed',
-        loadChildren: () => import('../feed/feed-routing.module').then(m => m.FeedPageRoutingModule)
-      },
-      {
         path: 'create',
         loadChildren: () => import('../create/create.module').then(m => m.CreatePageModule)
+      },
+      {
+        path: 'event-feed',
+        loadChildren: () => import('../event-feed/event-feed.module').then(m => m.EventFeedPageModule)
       },
       {
         path: 'profile',
@@ -26,14 +26,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'main-tabs/create',
+        redirectTo: 'main-tabs/profile',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: 'main-tabs/create',
+    redirectTo: 'main-tabs/profile',
     pathMatch: 'full'
   }
 ];

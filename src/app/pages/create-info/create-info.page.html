@@ -18,16 +18,16 @@
 
     <!--    Category -->
     <ion-row>
-      <ion-col>
-        <ion-item>
-          <ion-label>Categoría</ion-label>
-          <ion-select okText="Ok" cancelText="Cancelar" [(ngModel)]="selectedCat">
-            <ion-select-option *ngFor="let cat of establishmentCats"
-                               value="{{cat.id}}">{{cat.name}}</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label>Categoría</ion-label>
+        <ion-select okText="Ok" cancelText="Cancelar" [(ngModel)]="selectedCat">
+          <ion-select-option *ngFor="let cat of establishmentCats"
+                             value="{{cat.id}}">{{cat.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+  </ion-row>
 
     <!--   Address | Location -->
     <ion-row>

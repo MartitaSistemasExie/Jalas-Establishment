@@ -145,6 +145,9 @@ export class EditProfilePage implements OnInit {
       this.presentSuccessAlert();
     }).catch(error => {
       console.log('ERROR: ', error);
+      if(error.status == 413) {
+        this.presentErrorImage();
+      }
     });
   }
 
@@ -197,6 +200,9 @@ export class EditProfilePage implements OnInit {
       this.presentSuccessAlert();
     }).catch(error => {
       console.log('ERROR: ', error);
+      if(error.status == 413) {
+        this.presentErrorImage();
+      }
     });
   }
 
@@ -249,6 +255,9 @@ export class EditProfilePage implements OnInit {
       this.presentSuccessAlert();
     }).catch(error => {
       console.log('ERROR: ', error);
+      if(error.status == 413) {
+        this.presentErrorImage();
+      }
     });
   }
 
@@ -295,6 +304,25 @@ export class EditProfilePage implements OnInit {
     const alert = await this.alertController.create({
       header: 'Error!',
       message: 'Verifica tu internet e intenta más tarde',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.cerrarModal();
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  /***
+   * Present Error Image
+   */
+  async presentErrorImage() {
+    const alert = await this.alertController.create({
+      header: 'Lo Sentimos...',
+      message: 'Tu imagen es demasiado grande, intenta con una con menos resolución',
       buttons: [
         {
           text: 'Ok',
