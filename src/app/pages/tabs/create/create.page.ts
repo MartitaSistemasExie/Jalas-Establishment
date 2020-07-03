@@ -7,6 +7,7 @@ import {Storage} from "@ionic/storage";
 import {HTTP} from "@ionic-native/http/ngx";
 import {environment} from "../../../../environments/environment.prod";
 import {Router} from "@angular/router";
+import { DatePipe } from '@angular/common';
 
 const urlBack = environment.urlBackend;
 @Component({
@@ -49,6 +50,7 @@ export class CreatePage implements OnInit {
 
   constructor(private alertController: AlertController,
               private camera: Camera,
+              private datePipe: DatePipe,
               private http: HTTP,
               private loadingController: LoadingController,
               private nativeGeocoder: NativeGeocoder,
@@ -109,10 +111,10 @@ export class CreatePage implements OnInit {
     this.event.conf.images.bannerImage = this.bannerImage;
     this.event.conf.address = this.address;
     this.event.conf.description = this.description;
-    this.event.conf.date.fechaInicio = this.fechaInicio.split("T",1)[0]
-    this.event.conf.date.fechaFin = this.fechaFin.split("T",1)[0]
-    this.event.conf.date.horaInicio = this.horaInicio.split(".",1)[0].split("T", 2)[1];
-    this.event.conf.date.horaFin = this.horaFin.split(".",1)[0].split("T", 2)[1];
+    this.event.conf.date.fechaInicio = this.datePipe.transform(this.fechaInicio, 'dd-MM-yyyy');
+    this.event.conf.date.fechaFin = this.datePipe.transform(this.fechaFin, 'dd-MM-yyyy');
+    this.event.conf.date.horaInicio = this.datePipe.transform(this.horaInicio, 'HH:mm');
+    this.event.conf.date.horaFin = this.datePipe.transform(this.horaFin, 'HH:mm');
     console.log('EVENT:', this.event);
     this.callCreateService();
 

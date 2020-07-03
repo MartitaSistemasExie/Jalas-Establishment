@@ -15,7 +15,7 @@ import {Camera} from '@ionic-native/camera/ngx';
 import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
-
+import {DatePipe} from '@angular/common';
 
 import {HTTP} from '@ionic-native/http/ngx';
 
@@ -32,6 +32,7 @@ import {HTTP} from '@ionic-native/http/ngx';
     SplashScreen,
     Geolocation,
     HTTP,
+    DatePipe,
     NativeGeocoder,
     Camera,
     { provide: RouteReuseStrategy,

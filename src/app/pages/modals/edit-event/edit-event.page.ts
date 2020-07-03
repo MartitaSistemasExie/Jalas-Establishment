@@ -5,6 +5,7 @@ import {AlertController, LoadingController, ModalController} from "@ionic/angula
 import {environment} from "../../../../environments/environment.prod";
 import {NativeGeocoder, NativeGeocoderOptions, NativeGeocoderResult} from "@ionic-native/native-geocoder/ngx";
 import {Geolocation} from "@ionic-native/geolocation/ngx";
+import { DatePipe } from '@angular/common';
 
 const urlBack = environment.urlBackend;
 
@@ -44,6 +45,7 @@ export class EditEventPage implements OnInit {
   constructor(private alertController: AlertController,
               private geolocation: Geolocation,
               private http: HTTP,
+              private datePipe: DatePipe,
               private loadingController: LoadingController,
               private modalController: ModalController,
               private nativeGeocoder: NativeGeocoder,
@@ -82,10 +84,10 @@ export class EditEventPage implements OnInit {
     this.data.updateData.push({
       "field": "date",
       "data": [
-        "horaInicio", this.horaInicio,
-        "horaFin",this.horaFin,
-        "fechaInicio", this.fechaInicio.split("T",1)[0],
-        "fechaFin", this.fechaFin.split("T",1)[0]
+        "horaInicio", this.datePipe.transform(this.horaInicio, 'HH:mm'),
+        "horaFin",this.datePipe.transform(this.horaFin, 'HH:mm'),
+        "fechaInicio", this.datePipe.transform(this.fechaInicio, 'dd-MM-yyyy'),
+        "fechaFin", this.datePipe.transform(this.fechaFin, 'dd-MM-yyyy')
       ]
     });
 
