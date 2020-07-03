@@ -48,6 +48,7 @@ export class CreateInfoPage implements OnInit {
 
   arrayDis=false;
   selectedMusic = 0;
+  siteSession;
 
   musicTypes = [
     {id: 0, name: 'Rock', isChecked: false},
@@ -159,6 +160,7 @@ export class CreateInfoPage implements OnInit {
         return;
       }
       this.idEstablishment = this.serviceResponse.idEstablishment;
+      this.siteSession = this.serviceResponse.idSession;
       this.saveSiteId();
     }).catch(error => {
       console.log('ERROR: ', error);
@@ -299,11 +301,11 @@ export class CreateInfoPage implements OnInit {
    * Save Site Id
    */
   async saveSiteId() {
-    await this.storage.set('siteID', this.idEstablishment).then( () => {
-      console.log('SAVED SITE ID');
-      this.goToWelcomeScreen();
+    await this.storage.set('siteID', this.idEstablishment).then(() => {
+      this.storage.set('session', this.siteSession).then( () => {
+        this.goToWelcomeScreen();
+      });
     });
-
   }
 
   /***

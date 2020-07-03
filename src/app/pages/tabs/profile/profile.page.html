@@ -42,6 +42,8 @@
             <ion-item>
               <ion-row>
                 <ion-col>Correo</ion-col>
+              </ion-row>
+              <ion-row>
                 <ion-col>{{site.email}}</ion-col>
               </ion-row>
             </ion-item>
@@ -52,6 +54,8 @@
             <ion-item>
               <ion-row>
                 <ion-col>Teléfono</ion-col>
+              </ion-row>
+              <ion-row>
                 <ion-col>{{site.phone}}</ion-col>
               </ion-row>
             </ion-item>
@@ -63,8 +67,14 @@
               <ion-row>
                 <ion-col>Horarios</ion-col>
                 <ion-col size="10">
-                  <ion-row><ion-col>Lunes</ion-col><ion-col>{{site.hours.lunes}}</ion-col></ion-row>
-                  <ion-row><ion-col>Martes</ion-col><ion-col>{{site.hours.martes}}</ion-col></ion-row>
+                  <ion-row>
+                    <ion-col>Lunes</ion-col>
+                    <ion-col>{{site.hours.lunes}}</ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>Martes</ion-col>
+                    <ion-col>{{site.hours.martes}}</ion-col>
+                  </ion-row>
                   <ion-row><ion-col>Miércoles</ion-col><ion-col>{{site.hours.miercoles}}</ion-col></ion-row>
                   <ion-row><ion-col>Jueves</ion-col><ion-col>{{site.hours.jueves}}</ion-col></ion-row>
                   <ion-row><ion-col>Viernes</ion-col><ion-col>{{site.hours.viernes}}</ion-col></ion-row>

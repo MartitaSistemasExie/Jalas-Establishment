@@ -132,8 +132,10 @@ export class SettingsPage implements OnInit {
    * log out
    */
   async logOut() {
-   await this.storage.remove('siteID').then(() => {
-      this.router.navigate(['/login']);
+    await this.storage.remove('session').then(() => {
+      this.storage.remove('siteID').then(() => {
+        this.router.navigate(['/login']);
+      });
     });
   }
 

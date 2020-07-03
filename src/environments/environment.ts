@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlBackend: 'http://18.234.8.127/'
+  urlBackend: 'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com/'
 
 };
 

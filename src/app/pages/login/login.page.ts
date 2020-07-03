@@ -70,7 +70,8 @@ export class LoginPage implements OnInit {
 
       if ( this.serviceResponse.type === 'establishment') {
         console.log('GOING TO establishment TABS');
-        this.saveSiteID(this.serviceResponse.data);
+        // this.saveSiteID(this.serviceResponse.data);
+        this.saveSiteID(this.serviceResponse.data, this.serviceResponse.idSession);
         // this.router.navigate(['/site-tabs']);
       }
     }).catch(error => {
@@ -81,11 +82,12 @@ export class LoginPage implements OnInit {
   /***
    * Save Site ID
    */
-  async saveSiteID(id) {
+  async saveSiteID(id, session) {
     await this.storage.set('siteID', id).then(() => {
-      this.router.navigate(['/main-tabs']);
+      this.storage.set('session', session).then( () => {
+        this.router.navigate(['/main-tabs']);
+      });
     });
-
   }
 
   /***
