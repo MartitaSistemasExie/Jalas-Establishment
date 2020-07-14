@@ -106,6 +106,7 @@ export class EditProfilePage implements OnInit {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
+      allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
     };
     console.log('CAMERA OPTS: ', options);
@@ -162,6 +163,7 @@ export class EditProfilePage implements OnInit {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
+      allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
     };
     console.log('CAMERA OPTS: ', options);

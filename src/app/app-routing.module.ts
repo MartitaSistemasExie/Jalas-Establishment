@@ -55,6 +55,10 @@ const routes: Routes = [
     path: 'event-detail',
     loadChildren: () => import('./pages/modals/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
   },
+  {
+    path: 'establishment-gallery',
+    loadChildren: () => import('./pages/modals/establishment-gallery/establishment-gallery.module').then( m => m.EstablishmentGalleryPageModule)
+  },
   // {
   //   path: 'event-feed',
   //   loadChildren: () => import('./pages/tabs/event-feed/event-feed.module').then( m => m.EventFeedPageModule)

@@ -1,7 +1,7 @@
 <ion-header no-border="true" translucent>
   <ion-toolbar>
     <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
-      Cancelar
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
     <ion-title>Evento</ion-title>
   </ion-toolbar>
@@ -30,7 +30,7 @@
       <ion-col></ion-col>
       <ion-col size="10">
         <ion-item>
-          <ion-label position="stacked">Nombre</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Nombre</ion-label>
           <ion-input readonly="true" placeholder="Nombre de Evento" [(ngModel)]="name"></ion-input>
         </ion-item>
       </ion-col>
@@ -41,7 +41,7 @@
       <ion-col></ion-col>
       <ion-col size="10">
         <ion-item>
-          <ion-label position="stacked">Dirección</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Dirección</ion-label>
           <ion-textarea [(ngModel)]="address" readonly="true"></ion-textarea>
         </ion-item>
       </ion-col>
@@ -53,7 +53,7 @@
       <ion-col></ion-col>
       <ion-col size="10">
         <ion-item>
-          <ion-label position="floating"> Descripción</ion-label>
+          <ion-label position="floating" style="font-size: large;"> Descripción</ion-label>
           <ion-textarea readonly="true"
                         [(ngModel)]="description"></ion-textarea>
         </ion-item>

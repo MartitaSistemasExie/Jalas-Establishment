@@ -8,20 +8,36 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <ion-item *ngIf="noEvents">
-          <ion-label> No tienes eventos, crea uno ahora!!</ion-label>
-        </ion-item>
+        <!-- No hay Eventos -->
+        <ion-row *ngIf="noEvents">
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <ion-img src="../../../../assets/img/notFound.png"></ion-img>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col size="10">
+                <ion-text><b>No tienes eventos, crea uno ahora!!</b></ion-text> 
+              </ion-col>
+              <ion-col></ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+
         <ion-list lines="none">
           <ion-item-sliding *ngFor="let event of events">
             <ion-item>
               <ion-card style="width: 100%">
-                <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/event/banner/'+event.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
+                <img [src]="eventBanner + event.conf.images.bannerImage + '.jpg'" class="bannerImage"/>
                 <div class="myOverlay">
                   <ion-grid>
                     <ion-row>
                       <ion-col size="3">
                         <ion-avatar class="avatar-radius">
-                          <img [src]="'http://jalasbackserver-env-2.wtrqcqjbqv.us-east-1.elasticbeanstalk.com//images/establishment/profile/'+event.conf.images.profileImage + '.jpg'" style="width: 50px; height: 50px;"/>
+                          <img [src]="profileServer + event.conf.images.profileImage + '.jpg'" style="width: 50px; height: 50px;"/>
                         </ion-avatar>
                       </ion-col>
                       <ion-col>

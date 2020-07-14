@@ -1,7 +1,7 @@
 <ion-header no-border="true" translucent>
   <ion-toolbar>
     <ion-button fill="clear" slot="start" [routerLink]="['/login']" routerDirection="root" color="danger">
-      Cancelar
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
     <ion-title>Crear Cuenta</ion-title>
   </ion-toolbar>
@@ -45,7 +45,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="stacked">Nombre</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Nombre</ion-label>
           <ion-input placeholder="Nombre del Establecimiento" type="text" [(ngModel)]="establishment.name"
                      required></ion-input>
         </ion-item>
@@ -54,7 +54,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="stacked">Correo</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Correo</ion-label>
           <ion-input placeholder="ejemplo@correo.com" type="email" [(ngModel)]="establishment.email"
                      required></ion-input>
         </ion-item>
@@ -63,7 +63,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Contraseña</ion-label>
           <ion-input placeholder="*****" type="password" [(ngModel)]="establishment.pswd" required></ion-input>
         </ion-item>
       </ion-col>
@@ -71,7 +71,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="stacked">Repetir Contraseña</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Repetir Contraseña</ion-label>
           <ion-input placeholder="*****" type="password" [(ngModel)]="secondPswd" required></ion-input>
         </ion-item>
       </ion-col>

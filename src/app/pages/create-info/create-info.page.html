@@ -1,7 +1,7 @@
 <ion-header no-border="true" translucent>
   <ion-toolbar>
     <ion-button fill="clear" slot="start" [routerLink]="['/login']" routerDirection="root" color="danger">
-      Cancelar
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
     <ion-title>Crear Cuenta</ion-title>
   </ion-toolbar>
@@ -20,7 +20,7 @@
     <ion-row>
     <ion-col>
       <ion-item>
-        <ion-label>Categoría</ion-label>
+        <ion-label style="font-size: large;">Categoría</ion-label>
         <ion-select okText="Ok" cancelText="Cancelar" [(ngModel)]="selectedCat">
           <ion-select-option *ngFor="let cat of establishmentCats"
                              value="{{cat.id}}">{{cat.name}}</ion-select-option>
@@ -33,7 +33,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating">Ubicación</ion-label>
+          <ion-label position="floating" style="font-size: large;">Ubicación</ion-label>
           <ion-button slot="end" size="small" fill="outline" color="dark" (click)="obtenerDireccion()">
             <ion-icon name="location" size="small" color="dark"></ion-icon>
           </ion-button>
@@ -46,7 +46,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-label position="floating"> Teléfono</ion-label>
+          <ion-label position="floating" style="font-size: large;"> Teléfono</ion-label>
           <ion-input inputmode="tel"  [(ngModel)]="phone"></ion-input>
         </ion-item>
       </ion-col>

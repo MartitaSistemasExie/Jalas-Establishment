@@ -18,6 +18,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import {DatePipe} from '@angular/common';
 
 import {HTTP} from '@ionic-native/http/ngx';
+import {PhotoViewer} from '@ionic-native/photo-viewer/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import {HTTP} from '@ionic-native/http/ngx';
     SplashScreen,
     Geolocation,
     HTTP,
+    PhotoViewer,
     DatePipe,
     NativeGeocoder,
     Camera,

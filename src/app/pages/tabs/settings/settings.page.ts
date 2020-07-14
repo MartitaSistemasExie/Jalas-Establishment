@@ -77,10 +77,10 @@ export class SettingsPage implements OnInit {
     this.site.name = data.name;
     this.site.location = data.conf.location.address;
     if(data.conf.images.profileImage) {
-      this.site.avatarImage = urlBack + '/images/establishment/profile/' + data.conf.images.profileImage + '.jpg';
+      this.site.avatarImage = environment.establishmentImg + 'profile/' + data.conf.images.profileImage + '.jpg';
     }
     if(data.conf.images.bannerImage) {
-      this.site.bgImage = urlBack + '/images/establishment/banner/' + data.conf.images.bannerImage + '.jpg';
+      this.site.bgImage = environment.establishmentImg + 'banner/' + data.conf.images.bannerImage + '.jpg';
     }
 
   }

@@ -1,7 +1,7 @@
 <ion-header no-border="true" translucent>
   <ion-toolbar>
     <ion-button fill="clear" slot="start" (click)="cerrarModal()" color="danger">
-      Cerrar
+      <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-button>
     <ion-title>Editar Perfil</ion-title>
   </ion-toolbar>
@@ -62,46 +62,6 @@
         </ion-card>
       </ion-col>
     </ion-row>
-
-    <!--    Imagenes de Galeria-->
-    <ion-row>
-      <ion-col>
-        <!--        titulo-->
-        <ion-row>
-          <ion-col>
-            <ion-label>Galería</ion-label>
-          </ion-col>
-        </ion-row>
-        <!--        Imagenes y boton-->
-        <ion-row>
-
-          <!--          boton-->
-          <ion-col size="2">
-            <ion-button color="dark" fill="clear" size="large" (click)="addGalleryImage()">
-              <ion-icon name="add-circle-outline"></ion-icon>
-            </ion-button>
-          </ion-col>
-          <!--          imagenes-->
-          <ion-col>
-            <ion-slides *ngIf="!emptyGallery">
-              <ion-slide *ngFor="let image of gallery">
-                <div>
-                  <ion-button fill="clear" color="dark" (click)="removeGalleryImage(image)">
-                    <ion-icon name="close-circle-outline"></ion-icon>
-                  </ion-button>
-                  <br/>
-                  <img [src]="image" class="galleryImage">
-                </div>
-              </ion-slide>
-            </ion-slides>
-            <ion-label *ngIf="emptyGallery"> Sin imagenes de galería</ion-label>
-          </ion-col>
-        </ion-row>
-        <!--        fin -->
-
-      </ion-col>
-    </ion-row>
-
 
   </ion-grid>
 

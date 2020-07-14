@@ -22,7 +22,9 @@ export class EventDetailPage implements OnInit {
    fechaFin;
    horaInicio;
    horaFin;
-  bannerServer = urlBack + '/images/event/banner/';
+   bannerServer = environment.eventImg + 'banner/';
+  // bannerServer = urlBack + '/images/event/banner/';
+  //   banner
 
   constructor(private alertController: AlertController,
               private http: HTTP,

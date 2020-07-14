@@ -16,9 +16,13 @@ const urlBack = environment.urlBackend;
 })
 export class EventFeedPage implements OnInit {
 
-  profileServer = urlBack + '/images/establishment/profile/';
-  bannerServer = urlBack + '/images/establishment/banner/';
-  galleryServer = urlBack + '/images/establishment/gallery/';
+  profileServer = environment.establishmentImg + 'profile/';
+  bannerServer = environment.establishmentImg  + 'banner/';
+  galleryServer = environment.establishmentImg + 'gallery/';
+  eventBanner = environment.eventImg + 'banner/';
+  // profileServer = urlBack + '/images/establishment/profile/';
+  // bannerServer = urlBack + '/images/establishment/banner/';
+  // galleryServer = urlBack + '/images/establishment/gallery/';
   selectedCat;
   serviceResp;
   idEstablishment;

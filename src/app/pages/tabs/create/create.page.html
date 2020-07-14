@@ -28,7 +28,7 @@
       <ion-col></ion-col>
       <ion-col size="10">
         <ion-item>
-          <ion-label position="stacked">Nombre</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Nombre</ion-label>
           <ion-input placeholder="Nombre de Evento" [(ngModel)]="name"></ion-input>
         </ion-item>
       </ion-col>
@@ -39,7 +39,7 @@
       <ion-col></ion-col>
       <ion-col size="10">
         <ion-item>
-          <ion-label position="stacked">Dirección</ion-label>
+          <ion-label position="stacked" style="font-size: large;">Dirección</ion-label>
           <ion-button slot="end" size="small" fill="outline" color="dark" (click)="obtenerDireccion()">
             <ion-icon name="location" size="small" color="dark"></ion-icon>
           </ion-button>
@@ -54,7 +54,7 @@
       <ion-col></ion-col>
       <ion-col size="10">
         <ion-item>
-          <ion-label position="floating"> Descripción</ion-label>
+          <ion-label position="floating" style="font-size: large;"> Descripción</ion-label>
           <ion-textarea placeholder="Descripción de Evento (costos, preventas, etc.)"
                         [(ngModel)]="description"></ion-textarea>
         </ion-item>

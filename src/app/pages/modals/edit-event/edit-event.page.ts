@@ -16,7 +16,8 @@ const urlBack = environment.urlBackend;
 })
 export class EditEventPage implements OnInit {
 
-  bannerServer = urlBack + '/images/event/banner/';
+  // bannerServer = urlBack + '/images/event/banner/';
+  bannerServer = environment.eventImg + 'banner/';
   idEvent;
   serviceResp;
   //Editable fields
@@ -108,7 +109,7 @@ export class EditEventPage implements OnInit {
       console.log('RESP SERVICIO UPDATE:');
       console.log(resp.data);
       this.serviceResp = JSON.parse(resp.data);
-      if(this.serviceResp.status != 1) {
+      if (this.serviceResp.status != 1) {
         this.presentServiceError();
         return;
       }
