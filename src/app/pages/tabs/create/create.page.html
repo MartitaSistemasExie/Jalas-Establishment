@@ -10,7 +10,7 @@
             </ion-text>
           </ion-card-header>
           <ion-card-title>
-            <ion-img [src]="bannerImage" class="bannerImage"></ion-img>
+            <ion-img [src]="bannerImage" *ngIf="bannerImage != ''" class="bannerImage"></ion-img>
           </ion-card-title>
           <ion-card-content>
             <ion-button color="dark"
