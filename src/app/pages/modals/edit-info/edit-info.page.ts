@@ -136,7 +136,7 @@ export class EditInfoPage implements OnInit {
    */
   async presentErrorAlert() {
     const alert = await this.alertController.create({
-      subHeader: 'Hubo un error',
+      subHeader: 'Error',
       message: 'Verifica tu conexión a internet e intenta de nuevo',
       buttons: [{
         text: 'Ok',
@@ -153,8 +153,8 @@ export class EditInfoPage implements OnInit {
    */
   async presentSuccessAlert() {
     const alert = await this.alertController.create({
-      subHeader: 'Listo!',
-      message: 'Información Modificada con Exito.',
+      subHeader: 'Listo',
+      message: 'Información modificada con éxito.',
       buttons: [{
         text: 'Ok',
         handler: () => {

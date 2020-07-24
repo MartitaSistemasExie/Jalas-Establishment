@@ -356,10 +356,10 @@ export class CreateInfoPage implements OnInit {
   async obtenerDireccion() {
     const alert = await this.alertController.create({
       header: 'Obtener Ubicación',
-      message: 'Utilizar ubicación actual?',
+      message: '¿Utilizar ubicación actual?',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary',
           handler: (blah) => {

@@ -87,7 +87,7 @@ export class EventFeedPage implements OnInit {
   async deleteEvent(id){
 
     const alert = await this.alertController.create({
-      header: 'Estas seguro de borrar este evento?',
+      header: '¿Estás seguro de borrar este evento?',
       message: 'No podrás recuperar este evento',
       buttons: [{
         text: 'Cancelar',
@@ -137,8 +137,8 @@ export class EventFeedPage implements OnInit {
    */
   async serviceSuccess() {
     const alert = await this.alertController.create({
-      header: 'Listo!',
-      message: ' Evento Borrado',
+      header: 'Listo',
+      message: ' Evento borrado',
       buttons: [{
         text: 'Ok',
         handler: () => {

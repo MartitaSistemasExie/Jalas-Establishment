@@ -157,7 +157,7 @@ export class ProfilePage implements OnInit {
    */
   async presentErrorAlert() {
     const alert = await this.alertController.create({
-      header: 'Error!',
+      header: 'Error',
       message: 'Verifica tu internet e intenta más tarde',
       buttons: ['Ok']
     });
@@ -181,7 +181,7 @@ export class ProfilePage implements OnInit {
    */
   async presentSuccessAlert() {
     const alert = await this.alertController.create({
-      header: 'Listo!',
+      header: 'Listo',
       message: 'Agregado correctamente',
       buttons: ['Ok']
     });

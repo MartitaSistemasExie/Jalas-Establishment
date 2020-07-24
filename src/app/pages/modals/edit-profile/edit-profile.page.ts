@@ -304,7 +304,7 @@ export class EditProfilePage implements OnInit {
    */
   async presentErrorAlert() {
     const alert = await this.alertController.create({
-      header: 'Error!',
+      header: 'Error',
       message: 'Verifica tu internet e intenta más tarde',
       buttons: [
         {
