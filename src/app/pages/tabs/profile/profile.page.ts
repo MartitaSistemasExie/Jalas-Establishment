@@ -75,13 +75,13 @@ export class ProfilePage implements OnInit {
    */
   addGalleryImage() {
     const options: CameraOptions = {
-      quality: 15,
+      quality: 10,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
       allowEdit: true,
-      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
     };
     console.log('CAMERA OPTS: ', options);
     this.camera.getPicture(options).then((imageData) => {
@@ -185,6 +185,9 @@ export class ProfilePage implements OnInit {
       message: 'Agregado correctamente',
       buttons: ['Ok']
     });
+    alert.onDidDismiss().then(() => {
+      this.getSiteProfile();
+    });
     await alert.present();
   }
 
@@ -268,25 +271,31 @@ export class ProfilePage implements OnInit {
     this.site.hours.sabado = data.conf.hours.sabado;
     this.site.hours.domingo = data.conf.hours.domingo;
 
-    if(data.conf.images.profileImage) {
+    if (data.conf.images.profileImage) {
       this.site.avatarImage = this.profileServer + data.conf.images.profileImage + '.jpg';
     }
     if(data.conf.images.bannerImage) {
       this.site.bgImage = this.bannerServer + data.conf.images.bannerImage + '.jpg';
     }
 
-    this.site.gallery = [];
-    console.log('Gallery array:', this.gallery);
-    if (data.conf.gallery.length > 0) {
+    console.log('Trying to erase array');
+    this.gallery = [];
+    console.log('After Erase Gallery array:', this.gallery);
+
+    this.fillArray(data.conf.gallery);
+
+  }
+
+  fillArray(images: any) {
+    console.log('fillArray');
+    if (images.length > 0) {
       this.emptyGallery = false;
       // tslint:disable-next-line: forin
-      for (const v in data.conf.gallery) {
-        // this.site.gallery.push(this.galleryServer + data.conf.gallery[v] + '.jpg');
-        this.gallery.push(this.galleryServer + data.conf.gallery[v] + '.jpg');
+      for (const v in images) {
+        this.gallery.push(this.galleryServer + images[v] + '.jpg');
       }
-      // this.gallery = data.conf.gallery;
     }
-
+    console.log('After Fill Array:', this.gallery);
   }
 
 }

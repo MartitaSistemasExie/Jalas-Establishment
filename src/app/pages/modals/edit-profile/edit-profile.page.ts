@@ -101,13 +101,14 @@ export class EditProfilePage implements OnInit {
    */
   addBannerImage() {
     const options: CameraOptions = {
-      quality: 15,
+      quality: 10,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
       allowEdit: true,
-      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      targetHeight: 200,
     };
     console.log('CAMERA OPTS: ', options);
     this.camera.getPicture(options).then((imageData) => {
@@ -158,13 +159,15 @@ export class EditProfilePage implements OnInit {
    */
   addAvatarImage() {
     const options: CameraOptions = {
-      quality: 15,
+      quality: 10,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
       allowEdit: true,
-      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
+      targetHeight: 75,
+      targetWidth: 75
     };
     console.log('CAMERA OPTS: ', options);
     this.camera.getPicture(options).then((imageData) => {
@@ -214,7 +217,7 @@ export class EditProfilePage implements OnInit {
    */
   addGalleryImage() {
     const options: CameraOptions = {
-      quality: 15,
+      quality: 10,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
