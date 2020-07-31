@@ -194,14 +194,13 @@ export class CreatePage implements OnInit {
    */
   addBannerImage() {
     const options: CameraOptions = {
-      quality: 10,
+      quality: 5,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
       correctOrientation: true,
       allowEdit: true,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
-      targetHeight: 200
     };
     console.log('CAMERA OPTS: ', options);
     this.camera.getPicture(options).then((imageData) => {
